@@ -6,7 +6,8 @@ namespace _06Encapsulamento
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Aluno a = new Aluno();
+            a.Mensagem();
         }
     }
 }
