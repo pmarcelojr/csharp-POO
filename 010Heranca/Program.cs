@@ -6,7 +6,7 @@ namespace _010Heranca
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Colaborador Obj = new Colaborador("Marcelo", 26, 2.500);
         }
     }
 }
