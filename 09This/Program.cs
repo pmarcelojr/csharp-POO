@@ -6,7 +6,7 @@ namespace _09This
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Pessoa p = new Pessoa("Marcelo");
         }
     }
 }
