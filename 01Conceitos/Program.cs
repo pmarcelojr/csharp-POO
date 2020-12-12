@@ -6,7 +6,10 @@ namespace _01Conceitos
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Pessoa p1 = new Pessoa();
+            p1.nome = "Marcelo";
+            p1.idade = 27;
+            p1.Mensagem();
         }
     }
 }
