@@ -6,7 +6,10 @@ namespace _08GetSet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Pessoa p = new Pessoa();
+
+            p.Nome = "Marcelo";
+            Console.WriteLine(p.Nome);
         }
     }
 }
