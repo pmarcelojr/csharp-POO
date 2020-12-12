@@ -6,7 +6,12 @@ namespace _03ExercicioEscolar
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Instanciar objeto classe alunoe
+            Aluno  a = new Aluno();
+            a.nome = "Denis";
+            a.nota1 = 8;
+            a.nota2 = 9;
+            a.Mensagem();
         }
     }
 }
