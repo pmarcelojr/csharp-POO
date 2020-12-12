@@ -6,7 +6,9 @@ namespace _05Acesso
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Produto p = new Produto();
+            p.nome = "jeferson"; // ok
+            // p.valor ??? nao é visivel
         }
     }
 }
