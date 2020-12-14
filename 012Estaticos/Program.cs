@@ -6,7 +6,7 @@ namespace _012Estaticos
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Exemplo.Soma(3, 7);
         }
     }
 }
