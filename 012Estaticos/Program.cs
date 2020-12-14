@@ -7,6 +7,7 @@ namespace _012Estaticos
         static void Main(string[] args)
         {
             Exemplo.Soma(3, 7);
+            Console.WriteLine($"Olá {Exemplo.nome}");
         }
     }
 }
