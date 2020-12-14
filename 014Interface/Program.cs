@@ -6,7 +6,9 @@ namespace _014Interface
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Calculo c = new Calculo();
+            c.Somar(10, 15);
+            c.Subtrair(50, 18);
         }
     }
 }
