@@ -6,7 +6,10 @@ namespace _013Abstracao
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PessoaFisica pf = new PessoaFisica();
+            pf.TaxaEmprestimo(1000);
+            Pessoajuridica pj = new Pessoajuridica();
+            pj.TaxaEmprestimo(1000);
         }
     }
 }
