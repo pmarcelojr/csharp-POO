@@ -12,6 +12,7 @@ namespace _04Matrizes
 
             int[,] mat = new int[n , n];
 
+            // Preenchendo a matriz
             for(int i = 0; i < n; i++)
             {
                 Console.Clear();
@@ -28,6 +29,17 @@ namespace _04Matrizes
             {
                 Console.Write($"{mat[i,i]} ");
             }
+            // Contando valores negativos na matriz
+            int count = 0;
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < n; j++)
+                {
+                    if (mat[i, j] < 0)
+                        count++;
+                }
+            }
+            Console.Write($"A quantidade de numeros negativos é {count}");
         }
     }
 }
