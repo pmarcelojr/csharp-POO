@@ -1,5 +1,11 @@
 ﻿using System;
 
+/*
+    Fazer um programa para ler dois números inteiros L e C, e depois ler uma matriz de L linhas por C colunas contendo números inteiros, podendo haver repetições.
+    Em seguida, ler um número inteiro X que pertence á matriz.
+    Para cada ocorrência de X, mostrar os valores á esquerda, acima, á direita e abaixo de X, quando houver.
+*/
+
 namespace _05Matrizes2
 {
     class Program
