@@ -1,5 +1,9 @@
 ﻿using System;
 
+/*
+    Fazer um programa para ler um número inteiro N e uma matriz de ordem N contendo números inteiros.
+    Em seguida, mostrar a Diagonal principal e a quantidade de valores negativos da matriz.
+*/
 namespace _04Matrizes
 {
     class Program
