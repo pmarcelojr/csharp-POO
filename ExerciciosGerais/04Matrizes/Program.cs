@@ -6,6 +6,7 @@ namespace _04Matrizes
     {
         static void Main(string[] args)
         {
+            Console.Clear();
             Console.WriteLine("Entre com um numero inteiro: ");
             int n = int.Parse(Console.ReadLine());
 
@@ -20,6 +21,12 @@ namespace _04Matrizes
                 {
                     mat[i, j] = int.Parse(values[j]);
                 }
+            }
+            Console.Clear();
+            Console.Write("Diagonal principal: ");
+            for(int i = 0; i < n; i++)
+            {
+                Console.Write($"{mat[i,i]} ");
             }
         }
     }
