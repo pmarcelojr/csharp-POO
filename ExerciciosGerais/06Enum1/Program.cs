@@ -14,6 +14,10 @@ namespace _06Enum1
                 Status = OrderStatus.PendingPayment
             };
             Console.WriteLine(order);
+
+            // Convertendo tipo enumerado para string
+            string txt = OrderStatus.PendingPayment.ToString();
+            Console.WriteLine(txt);
         }
     }
 }
