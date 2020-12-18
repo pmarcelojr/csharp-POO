@@ -18,6 +18,9 @@ namespace _06Enum1
             // Convertendo tipo enumerado para string
             string txt = OrderStatus.PendingPayment.ToString();
             Console.WriteLine(txt);
+            // Convertendo uma string para tipo enumerado
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered"); // texto tem q ser igual ao enum
+            Console.WriteLine(os);
         }
     }
 }
