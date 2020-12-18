@@ -24,7 +24,30 @@ namespace _05Matrizes2
                     mat[i, j] = int.Parse(values[j]);
                 }
             }
+            Console.Clear();
+            Console.Write("Escolha um numero pertencente a matriz: ");
+            int X = int.Parse(Console.ReadLine());
 
+            string[] localizacao = new string[C];
+            for(int i = 0; i < L; i++)
+            {
+                for(int j = 0; j < C; j++)
+                {
+                    if(mat[i, j] == X)
+                    {
+                        Console.WriteLine($"Posição {i},{j}:");
+                        localizacao[0] = j == 0 ? "" : mat[i, j - 1].ToString();
+                        Console.WriteLine($"Esqueda: {localizacao[0]}");
+                        localizacao[1] = j == mat.GetUpperBound(1) ? "" : mat[i, j + 1].ToString();
+                        Console.WriteLine($"Direita: {localizacao[1]}");
+                        localizacao[2] = i == 0 ? "" : mat[i - 1, j].ToString();
+                        Console.WriteLine($"Acima: {localizacao[2]}");
+                        localizacao[3] = i == mat.GetUpperBound(0) ? "" : mat[i + 1, j].ToString();
+                        Console.WriteLine($"Abaixo: {localizacao[3]}");
+                        Console.WriteLine("-----------------");
+                    }
+                }
+            }
         }
     }
 }
