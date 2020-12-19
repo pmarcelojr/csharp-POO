@@ -23,9 +23,9 @@ namespace _02NumberGuessGame
                 int n = int.Parse(Console.ReadLine());
 
                 if(n > winNum)
-                    Console.WriteLine("Numero abaixo!");
+                    Console.WriteLine("Numero Acima, um pouco mais para baixo...");
                 else if (n < winNum)
-                    Console.WriteLine("Numero acima!");
+                    Console.WriteLine("Numero Abaixo, um pouco mais para cima...");
                 else if (n == winNum)
                 {
                     Console.Clear();
