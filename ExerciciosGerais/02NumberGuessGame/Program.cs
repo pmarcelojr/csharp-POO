@@ -8,12 +8,19 @@ namespace _02NumberGuessGame
         {
             Console.Clear();
             Random r = new Random();
-            int winNum = r.Next(0, 100);
+            Console.WriteLine("--- Seja Bem Vindo ao Jogo da Adivinhação ---");
+            Console.Write("Entre com um número inicial: ");
+            int x = int.Parse(Console.ReadLine());
+            Console.Write("Entre com um número final: ");
+            int y = int.Parse(Console.ReadLine());
+            
+            int winNum = r.Next(x, y);
             bool win = false;
 
             do
             {
-                Console.WriteLine("Entre com um numero entre 0 e 100: ");
+                Console.Clear();
+                Console.WriteLine($"Entre com um numero entre {x} e {y}: ");
                 string i = Console.ReadLine();
                 int n = int.Parse(i);
 
