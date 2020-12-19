@@ -19,15 +19,13 @@ namespace _02NumberGuessGame
 
             do
             {
-                Console.Clear();
                 Console.WriteLine($"Entre com um numero entre {x} e {y}: ");
-                string i = Console.ReadLine();
-                int n = int.Parse(i);
+                int n = int.Parse(Console.ReadLine());
 
                 if(n > winNum)
-                    Console.WriteLine("Numero acima!");
-                else if (n < winNum)
                     Console.WriteLine("Numero abaixo!");
+                else if (n < winNum)
+                    Console.WriteLine("Numero acima!");
                 else if (n == winNum)
                 {
                     Console.Clear();
