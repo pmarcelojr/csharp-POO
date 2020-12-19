@@ -8,7 +8,7 @@ namespace _02NumberGuessGame
         {
             Console.Clear();
             Random r = new Random();
-            int winNum = r.Next(0, 10);
+            int winNum = r.Next(0, 100);
             bool win = false;
 
             do
@@ -23,10 +23,15 @@ namespace _02NumberGuessGame
                     Console.WriteLine("Numero abaixo!");
                 else if (n == winNum)
                 {
-                    Console.WriteLine("Você é o Vencedor!!!");
+                    Console.Clear();
+                    Console.WriteLine("***** Você é o Vencedor!!! *****");
                     win = true;
                 }
             } while (win == false);
+
+            Console.WriteLine("\nObrigado por jogar!");
+            Console.Write("Press any key to finish...");
+            Console.ReadKey(true);
             
         }
     }
