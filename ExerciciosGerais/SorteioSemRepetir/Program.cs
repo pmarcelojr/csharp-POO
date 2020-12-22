@@ -8,7 +8,14 @@ namespace SorteioSemRepetir
         static void Main(string[] args)
         {
             // Sorteando dez números que estejam entre o intervalo de 1 a 10.
-            Console.WriteLine(string.Join(", ", SorteiaNumerosSemRepetir(10, 1, 10)));
+            Console.Clear();
+            Console.Write("Informe a quantidade de numeros: ");
+            int qtd = int.Parse(Console.ReadLine());
+            Console.Write($"Informe o inicio respeitando a quantidade de {qtd}: ");
+            int min = int.Parse(Console.ReadLine());
+            Console.Write($"Informe o máximo: ");
+            int max = int.Parse(Console.ReadLine());
+            Console.WriteLine(string.Join(", ", SorteiaNumerosSemRepetir(qtd, min, max)));
         }
 
         private static int[] SorteiaNumerosSemRepetir(int qtd, int min, int max)
