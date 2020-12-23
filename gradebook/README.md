@@ -10,3 +10,21 @@ Precisamos de um livro de notas eletrônico para ler as pontuações de um aluno
 as notas são inseridas como números de ponto flutuante de 0 a 100 e as estatísticas devem nos mostrar a nota mais alta, a nota mais baixa e a nota média.
 
 criar unidade de teste com xunit e realizar testability.
+
+
+Commands
+-- mkdir gradebook && cd gradebook
+-- mkdir src && mkdir test
+-- cd src && mkdir GradeBook && cd GradeBook && dotnet new console
+-- dotnet run
+-- cd ../../
+-- cd test && mkdir GradeBook.Tests && cd GradeBook.Tests && dotnet new xunit
+-- dotnet test
+-- dotnet add reference src/GradeBook/GradeBook.csproj
+
+-- cd gradebook
+-- dotnet new sln
+-- dotnet sln add src/GradeBook/GradeBook.csproj
+-- dotnet sln add test/GradeBook.Tests/GradeBook.Tests.csproj
+
+-- dotnet build
