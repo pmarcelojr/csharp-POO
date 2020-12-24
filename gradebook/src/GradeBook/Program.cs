@@ -9,9 +9,6 @@ namespace GradeBook
         {
             var book = new Book("Scott's Grade Book");
             book.GradeAdded += OnGradeAdded;
-            book.GradeAdded += OnGradeAdded;
-            book.GradeAdded -= OnGradeAdded;
-            book.GradeAdded += OnGradeAdded;
 
             while(true)
             {
