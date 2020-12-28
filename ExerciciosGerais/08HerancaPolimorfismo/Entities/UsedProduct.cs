@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace _08HerancaPolimorfismo.Entities
 {
@@ -15,7 +16,7 @@ namespace _08HerancaPolimorfismo.Entities
 
         public override string PriceTag()
         {
-            return $"{Name} (used) $ {Price} (Manufacture date: {ManufactureDate.ToString("dd/MM/yyyy")})";
+            return $"{Name} (used) $ {Price.ToString("F2", CultureInfo.InvariantCulture)} (Manufacture date: {ManufactureDate.ToString("dd/MM/yyyy")})";
         }
     }
 }
