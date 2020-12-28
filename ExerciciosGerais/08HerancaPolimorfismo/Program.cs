@@ -12,7 +12,7 @@ namespace _08HerancaPolimorfismo
             Console.Clear();
             List<Product> list = new List<Product>();
 
-            Console.WriteLine("Enter the number of products: ");
+            Console.Write("Enter the number of products: ");
             int n = int.Parse(Console.ReadLine());
 
             for(int i = 0; i < n; i++)
@@ -29,6 +29,12 @@ namespace _08HerancaPolimorfismo
                     Console.Write("Manufacture date (DD/MM/YYYY): ");
                     DateTime date = DateTime.Parse(Console.ReadLine());
                     list.Add(new UsedProduct(name, price, date));
+                }
+                else if (typeProduct == 'i' || typeProduct == 'I')
+                {
+                    Console.Write("Customs fee: ");
+                    double customs = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    list.Add(new ImportedProduct(name, price, customs));
                 }
                 else
                 {
