@@ -1,6 +1,6 @@
 namespace _07Heranca.Entities
 {
-    public class SavingAccount : Account
+    class SavingAccount : Account
     {
         public double InterestRate { get; set; }
 
