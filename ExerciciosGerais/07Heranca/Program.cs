@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Collections.Generic;
 using _07Heranca.Entities;
 
 namespace _07Heranca
@@ -7,14 +9,29 @@ namespace _07Heranca
     {
         static void Main(string[] args)
         {
-            Account acc1 = new Account(1002, "Marcelo", 500.0);
-            Account acc2 = new SavingAccount(1003, "Marcelo", 500.0, 0.01);
+            List<Account> list = new List<Account>();
 
-            acc1.WithDraw(10.0);
-            acc2.WithDraw(10.0);
+            list.Add(new SavingAccount(1001, "Alex", 500.00, 0.01));
+            list.Add(new BusinessAccount(1002, "Maria", 500.00, 400.00));
+            list.Add(new SavingAccount(1003, "Bob", 500.00, 0.01));
+            list.Add(new BusinessAccount(1004, "Anna", 500.0, 500.00));
 
-            Console.WriteLine($"Saque da conta Account = {acc1.Balance}");
-            Console.WriteLine($"Saque da conta SavingAccount = {acc2.Balance}");
+            double sum = 0.0;
+            foreach(Account acc in list)
+            {
+                sum += acc.Balance;
+            }
+
+            Console.WriteLine($"Total Balance> {sum.ToString("F2", CultureInfo.InvariantCulture)}");
+
+            foreach(Account acc in list)
+            {
+                acc.WithDraw(10.0);
+            }
+            foreach(Account acc in list)
+            {
+                Console.WriteLine($"Updated balance for account {acc.Number}: {acc.Balance.ToString("f2", CultureInfo.InvariantCulture)}");
+            }
         }
     }
 }
