@@ -34,6 +34,12 @@ namespace _10ExcecoesPersonalizadas
             catch(DomainException e) {
                 Console.WriteLine(e.Message);
             }
+            catch(FormatException e) {
+                Console.WriteLine($"Format erro: {e.Message}");
+            }
+            catch(Exception e) {
+                Console.WriteLine($"Unexpected error: {e.Message}");
+            }
         }
     }
 }
