@@ -1,5 +1,6 @@
 ﻿using System;
 using _10ExcecoesPersonalizadas.Entities;
+using _10ExcecoesPersonalizadas.Entities.Exception;
 
 namespace _10ExcecoesPersonalizadas
 {
@@ -7,19 +8,16 @@ namespace _10ExcecoesPersonalizadas
     {
         static void Main(string[] args)
         {
-            Console.Write("Room Number: ");
-            int number = int.Parse(Console.ReadLine());
-            Console.Write("Check-In date (dd/MM/yyyy): ");
-            DateTime checkIn = DateTime.Parse(Console.ReadLine());
-            Console.Write("Check-Out date (dd/MM/yyyy): ");
-            DateTime checkOut = DateTime.Parse(Console.ReadLine());
+            try
+            {
+                Console.Clear();
+                Console.Write("Room Number: ");
+                int number = int.Parse(Console.ReadLine());
+                Console.Write("Check-In date (dd/MM/yyyy): ");
+                DateTime checkIn = DateTime.Parse(Console.ReadLine());
+                Console.Write("Check-Out date (dd/MM/yyyy): ");
+                DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
-            if(checkOut <= checkIn)
-            {
-                Console.WriteLine("Error in reservation: Check-Out date must be a after Check-In");
-            }
-            else
-            {
                 Reservation reservation = new Reservation(number, checkIn, checkOut);
                 Console.WriteLine($"Reservation:\n{reservation}");
 
@@ -30,17 +28,11 @@ namespace _10ExcecoesPersonalizadas
                 Console.Write("Check-Out date (dd/MM/yyyy): ");
                 DateTime checkout = DateTime.Parse(Console.ReadLine());
 
-                string error = reservation.UpdateDates(checkin, checkout);
-
-                if(error != null)
-                {
-                    Console.WriteLine(error);
-                }
-                else
-                {
-                    Console.WriteLine($"Reservation Update:\n{reservation}");
-                }
-
+                reservation.UpdateDates(checkin, checkout);
+                Console.WriteLine($"Reservation Update:\n{reservation}");
+            }
+            catch(DomainException e) {
+                Console.WriteLine(e.Message);
             }
         }
     }
