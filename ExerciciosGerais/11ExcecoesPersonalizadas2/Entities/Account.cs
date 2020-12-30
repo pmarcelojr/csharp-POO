@@ -1,5 +1,5 @@
 using _11ExcecoesPersonalizadas2.Entities.Exceptions;
-using System;
+using System.Globalization;
 
 namespace _11ExcecoesPersonalizadas2.Entities
 {
@@ -36,7 +36,7 @@ namespace _11ExcecoesPersonalizadas2.Entities
 
         public override string ToString()
         {
-            return $"New Balance {Balance}";
+            return $"New Balance {Balance.ToString("f2", CultureInfo.InvariantCulture)}";
         }
     }
 }
