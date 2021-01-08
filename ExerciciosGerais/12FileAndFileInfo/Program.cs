@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace _12FileAndFileInfo
 {
@@ -6,7 +7,27 @@ namespace _12FileAndFileInfo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string sourcePath = @"C:\temp\file1.txt";
+            string targetPath = @"C:\temp\file2.txt";
+
+            try
+            {
+                FileInfo fileInfo = new FileInfo(sourcePath);
+                fileInfo.CopyTo(targetPath);
+                string[] lines = File.ReadAllLines(sourcePath);
+                foreach(string line in lines)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("An error occurred!");
+                Console.WriteLine(e.Message);
+            }
+
+            Console.WriteLine("Pressione para sair...");
+            Console.ReadKey();
         }
     }
 }
