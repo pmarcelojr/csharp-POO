@@ -24,7 +24,13 @@ namespace _18WebAppWithWorkerService.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public string Get()
+        {
+            return $" --- API Acessada em:{DateTime.Now.ToLongDateString()} ---";
+        }
+
+        [HttpGet("tempo")]
+        public IEnumerable<WeatherForecast> GetWeather()
         {
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
