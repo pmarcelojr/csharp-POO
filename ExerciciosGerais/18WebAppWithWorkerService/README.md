@@ -17,3 +17,5 @@ O .NET Core fornece um modo de implantação chamado SCD (Implantação Independ
 Aqui eu crie o método Action HttpGet Get() que retorna uma string com a data e hora atual quando a API for acessada via endpoint : http://locahost:5000/weatherforecast
 
 Alterei o roteamento do outro método HttpGet GetWeather() para exibir a previsão do tempo quando for acessado via  endpoint: http://locahost:5000/weatherforecast/tempo
+
+[Link Tutorial](http://www.macoratti.net/20/04/aspc_winserv1.htm)
