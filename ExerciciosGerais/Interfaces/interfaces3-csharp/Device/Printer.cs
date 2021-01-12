@@ -2,7 +2,7 @@ using System;
 
 namespace interfaces3_csharp.Device
 {
-    class Printer : Device
+    class Printer : Device, IPrinter
     {
         public override void ProcessDoc(string document)
         {
@@ -11,7 +11,7 @@ namespace interfaces3_csharp.Device
 
         public void Print(string document)
         {
-            Console.WriteLine($"Printer print: {document}");
+            Console.WriteLine($"Printer print {document}");
         }
     }
 }

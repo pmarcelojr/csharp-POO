@@ -14,6 +14,11 @@ namespace interfaces3_csharp
             Scanner s = new Scanner() { SerialNumber = 2003 };
             s.ProcessDoc("My email");
             Console.WriteLine(s.Scan());
+
+            ComboDevice cd = new ComboDevice() { SerialNumber = 1043 };
+            cd.ProcessDoc("My dissertation");
+            cd.Print("My dissertation");
+            Console.WriteLine(cd.Scan());
         }
     }
 }
