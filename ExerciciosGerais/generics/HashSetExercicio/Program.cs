@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HashSetExercicio
 {
@@ -6,7 +7,18 @@ namespace HashSetExercicio
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            HashSet<string> set = new HashSet<string>();
+
+            set.Add("TV");
+            set.Add("Notebook");
+            set.Add("Tablet");
+
+            Console.WriteLine(set.Contains("geladeira"));
+
+            foreach (string p in set)
+            {
+                Console.WriteLine(p);
+            }
         }
     }
 }
