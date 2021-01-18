@@ -1,4 +1,5 @@
 ﻿using System;
+using exercMethodElapsedTime.Extensions;
 
 namespace exercMethodElapsedTime
 {
@@ -6,7 +7,8 @@ namespace exercMethodElapsedTime
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DateTime dt = new DateTime(2021, 1, 18, 8, 10, 45);
+            Console.WriteLine(dt.ElapsedTime());
         }
     }
 }
