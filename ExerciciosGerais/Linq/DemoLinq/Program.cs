@@ -13,7 +13,7 @@ namespace DemoLinq
             Category c2 = new Category() { Id = 2, Name = "Computers", Tier = 1 };
             Category c3 = new Category() { Id = 3, Name = "Electronics", Tier = 1 };
 
-            List<Product> products = new List<Product>() { 
+            List<Product> products = new List<Product>() {
                 new Product() { Id = 1, Name = "Computer", Price = 1100.00, Category = c2 },
                 new Product() { Id = 2, Name = "Hammer", Price = 90.00, Category = c1 },
                 new Product() { Id = 3, Name = "TV", Price = 1700.00, Category = c3 },
@@ -53,9 +53,36 @@ namespace DemoLinq
             var r9 = products.Where(p => p.Id == 20).SingleOrDefault();
             Console.WriteLine($"Single or default test 2: {r9}");
             Console.WriteLine();
-            
+
             var filteredOrders = products.Where(p => Filter(p.Name, "So Ba"));
             Print("PESQUISA: ", filteredOrders);
+
+            var r10 = products.Max(p => p.Price);
+            Console.WriteLine($"Max price: {r10}");
+            var r11 = products.Min(p => p.Price);
+            Console.WriteLine($"Min price: {r11}");
+            var r12 = products.Where(p => p.Category.Id == 1).Sum(p => p.Price);
+            Console.WriteLine($"Category 1 sum price: {r12}");
+            var r15 = products.Where(p => p.Category.Id == 1).Select(p => p.Price).Aggregate((x, y) => x + y);
+            Console.WriteLine($"Category 1 aggregate sum: {r15}");
+            var r16 = products.Where(p => p.Category.Id == 5).Select(p => p.Price).Aggregate(0.0, (x, y) => x + y);
+            Console.WriteLine($"Category 5 aggregate sum: {r16}");
+            var r13 = products.Where(p => p.Category.Id == 1).Average(p => p.Price);
+            Console.WriteLine($"Category 1 avarage prices: {r13}");
+            var r14 = products.Where(p => p.Category.Id == 5).Select(p => p.Price).DefaultIfEmpty(0.0).Average();
+            Console.WriteLine($"Category 5 average prices: {r14}");
+
+            Console.WriteLine();
+            var r17 = products.GroupBy(p => p.Category);
+            foreach (IGrouping<Category, Product> group in r17)
+            {
+                Console.WriteLine($"Category {group.Key.Name}:");
+                foreach (Product p in group)
+                {
+                    Console.WriteLine(p);
+                }
+                Console.WriteLine();
+            }
         }
 
         static void Print<T>(string message, IEnumerable<T> collection)
@@ -63,7 +90,7 @@ namespace DemoLinq
             Console.WriteLine(message);
             foreach (T obj in collection)
             {
-               Console.WriteLine(obj); 
+                Console.WriteLine(obj);
             }
             Console.WriteLine();
         }
@@ -74,9 +101,9 @@ namespace DemoLinq
             var keywords = keyword.Split(" ");
             if (keywords.Length > 0 && !string.IsNullOrEmpty(keyword))
             {
-                foreach ( var item in keywords)
+                foreach (var item in keywords)
                 {
-                    if ( word.Contains(item, StringComparison.CurrentCultureIgnoreCase))
+                    if (word.Contains(item, StringComparison.CurrentCultureIgnoreCase))
                     {
                         return true;
                     }
