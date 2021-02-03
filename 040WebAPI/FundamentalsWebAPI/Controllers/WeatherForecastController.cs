@@ -23,6 +23,12 @@ namespace FundamentalsWebAPI.Controllers
             _logger = logger;
         }
 
+        [HttpGet("hello")]
+        public string SayHello()
+        {
+            return "Hello!!!";
+        }
+
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
