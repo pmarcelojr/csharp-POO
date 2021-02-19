@@ -32,8 +32,9 @@ namespace Commander
                 Configuration.GetConnectionString("DefaultConnection")
             ));
 
-            services.AddScoped<ICommanderRepo, MockCommanderRepo>();
-            
+            // services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+            services.AddScoped<ICommanderRepo, MysqlCommanderRepo>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
