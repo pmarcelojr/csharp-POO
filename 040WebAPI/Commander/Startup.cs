@@ -32,6 +32,8 @@ namespace Commander
                 Configuration.GetConnectionString("DefaultConnection")
             ));
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
             // services.AddScoped<ICommanderRepo, MockCommanderRepo>();
             services.AddScoped<ICommanderRepo, MysqlCommanderRepo>();
 
