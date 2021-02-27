@@ -31,7 +31,7 @@ namespace Commander.Controllers
             return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commandItems));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetCommandbyId")]
         public ActionResult <CommandReadDto> GetCommandbyId(int id)
         {
             var commandItem = _repository.GetCommandById(id);
@@ -48,8 +48,10 @@ namespace Commander.Controllers
             var commandModel = _mapper.Map<Command>(commandCreateDto);
             _repository.CreateCommand(commandModel);
             _repository.SaveChanges();
+
+            var commandReadDto = _mapper.Map<CommandReadDto>(commandModel);
             
-            return Ok(commandModel);
+            return CreatedAtRoute(nameof(GetCommandbyId), new {Id = commandReadDto.Id}, commandReadDto);
         }
     }
 }
